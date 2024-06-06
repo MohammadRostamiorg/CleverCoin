@@ -15,6 +15,27 @@
             font-size: 2em;
             margin: 10px 0;
         }
+        #coin{
+            width: 250px;
+            height:250px;
+            background: url(./assets/coin.png);
+            margin: 20px auto;
+            background-size: cover;
+            border-radius: 50%;
+        }
+        #task{
+            margin : 10px auto;
+            margin-top: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            width: 80%;
+            color: #fff;
+            background: linear-gradient(45deg , #003263 , #719db9);
+            display: block;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -23,23 +44,34 @@
     <h2 id="coinsCount">
         
     </h2>
+
+    <div id="coin">
+
+    </div>
+
+    <a  id="task" href="t.me/CleverDes">
+        تسک نداریم فقط تشریف بیارید چنلمون
+    </a>
+    
     
     <script src="./telegram-web-app.js"></script>
     <script>
         // Init TWA
         Telegram.WebApp.ready();
 
-        if (Telegram.Utils.sessionStorageGet("coins") == null ) {
-            Telegram.Utils.sessionStorageSet('coins',1000)
-        }
+        // if (Telegram.Utils.sessionStorageGet("coins") == null ) {
+        //     Telegram.Utils.sessionStorageSet('coins',1000)
+        // }
 
         function setScore(){
             document.getElementById("coinsCount").innerText =Telegram.Utils.sessionStorageGet("coins")
         }
 
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
-        document.getElementById("coinsCount").addEventListener('click', () => {
-            Telegram.Utils.sessionStorageSet('coins',+sessionStorage.getItem("coins")+2)
+        document.getElementById("coin").addEventListener('click', () => {
+            Telegram.Utils.sessionStorageSet('coins',+ Telegram.Utils.sessionStorageGet("coins")+2)
+            setScore()
+            console.log("test")
         })
         setScore()
 
