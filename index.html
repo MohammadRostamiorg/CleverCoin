@@ -21,21 +21,27 @@
 <body>
   
     <h2 id="coinsCount">
-        Test
+        
     </h2>
     
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="./telegram-web-app.js"></script>
     <script>
         // Init TWA
         Telegram.WebApp.ready();
 
-        if (sessionStorage.getItem("coins") == null ) {
-            sessionStorage.setItem('coins',1000)
+        if (Telegram.Utils.sessionStorageGet("coins") == null ) {
+            Telegram.Utils.sessionStorageSet('coins',1000)
         }
+
+        function setScore(){
+            document.getElementById("coinsCount").innerText =Telegram.Utils.sessionStorageGet("coins")
+        }
+
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
         document.getElementById("coinsCount").addEventListener('click', () => {
-            sessionStorage.setItem('coins',+sessionStorage.getItem("coins")+2)
+            Telegram.Utils.sessionStorageSet('coins',+sessionStorage.getItem("coins")+2)
         })
+        setScore()
 
 
     </script>
