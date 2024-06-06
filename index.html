@@ -23,11 +23,11 @@
         // Init TWA
         Telegram.WebApp.ready();
 
-        if (sessionStorage.getItem("coins") ) {
-
+        if (sessionStorage.getItem("coins") == null || sessionStorage.getItem('coins') == undefined) {
+            sessionStorage.setItem('coins',1000)
         }
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
-        sessionStorage.setItem("coins" , 1000 + Math.floor(Math.random()*1000) );
+        sessionStorage.setItem("coins" , sessionStorage.getItem('coins') + 2);
         document.write(sessionStorage.getItem("coins"))
 
     </script>
