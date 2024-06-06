@@ -21,7 +21,8 @@
         Telegram.WebApp.ready();
 
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
-        console.log(Telegram.WebApp.getBackgroundColor())
+        sessionStorageSet("coins" , 1000);
+        document.write(sessionStorageSet("coins"))
 
     </script>
 
