@@ -14,14 +14,20 @@
 
 <body>
   
+    <h2 id="coinsCount">
+        
+    </h2>
     
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         // Init TWA
         Telegram.WebApp.ready();
 
+        if (sessionStorage.getItem("coins") ) {
+
+        }
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
-        sessionStorage.setItem("coins" , 1000);
+        sessionStorage.setItem("coins" , 1000 + Math.floor(Math.random()*1000) );
         document.write(sessionStorage.getItem("coins"))
 
     </script>
