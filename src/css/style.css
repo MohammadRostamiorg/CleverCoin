@@ -12,6 +12,7 @@
   --primary-color: #444a62;
   --secodary-color: #9096ac;
   --transparent-color: transparent;
+  --lowOpacity-color: #00000040;
 
   --tabbar-btns-width: 100%;
   --tabs-count: 3;
@@ -49,6 +50,7 @@ body {
   text-shadow: 0 1rem 5rem #fff;
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
+  box-shadow: 0 1.5rem 2rem var(--lowOpacity-color);
 }
 
 .head .head__coins-count {
@@ -60,6 +62,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 2rem;
+  box-shadow: 0 1.5rem 2rem var(--lowOpacity-color);
 }
 
 .tabbar-btns {
@@ -79,6 +82,7 @@ body {
   font-size: 1.8rem;
   text-transform: capitalize;
   transition: 0.3s;
+  box-shadow: 0 1.5rem 2rem var(--lowOpacity-color);
 }
 
 .tabbar-btns .tabbar-btns__btn.active {
@@ -118,6 +122,7 @@ body {
   overflow: hidden;
   outline: 0.3rem solid var(--secodary-color);
   outline-offset: 0.5rem;
+  box-shadow: 0 1.5rem 2rem var(--lowOpacity-color);
 }
 
 .tap-section .tap-section__tap-btn:active img {
@@ -140,7 +145,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .tasks-section
@@ -154,6 +159,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  box-shadow: 0 0.5rem 1rem var(--lowOpacity-color);
 }
 
 .coin {
@@ -175,4 +181,5 @@ body {
 }
 
 .info-section .info-section_paragraph {
+  text-shadow: 0 1.5rem 1rem var(--lowOpacity-color);
 }
